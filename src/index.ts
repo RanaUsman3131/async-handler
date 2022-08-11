@@ -1,6 +1,16 @@
-export const sum = (a: number, b: number) => {
-  if ('development' === process.env.NODE_ENV) {
-    console.log('boop');
-  }
-  return a + b;
+import Express from 'express';
+interface callback {
+  (
+    req: Express.Request,
+    res: Express.Response,
+    next: Express.NextFunction
+  ): void;
+}
+
+export const catchAsync = (fn: callback) => (
+  req: Express.Request,
+  res: Express.Response,
+  next: Express.NextFunction
+) => {
+  Promise.resolve(fn(req, res, next)).catch(err => next(err));
 };
