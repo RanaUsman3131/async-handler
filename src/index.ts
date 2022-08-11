@@ -16,5 +16,7 @@ export const catchAsync = (fn: callback) => (
 };
 
 export const asyncHandle = function(fn: Function) {
-  Promise.resolve(fn(arguments)).catch(err => err);
+  Promise.resolve(fn(arguments)).catch(() => {
+    return 'err';
+  });
 };
