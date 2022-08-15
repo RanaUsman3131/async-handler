@@ -4,8 +4,8 @@ const ApiError = require('./ErrorClass');
 
 export const errorConverter = (
   err: any,
-  req: Express.Request,
-  res: Express.Response,
+  _req: Express.Request,
+  _res: Express.Response,
   next: Express.NextFunction
 ) => {
   let error = err;
@@ -19,9 +19,9 @@ export const errorConverter = (
 
 export const errorHandler = (
   err: any,
-  req: Express.Request,
+  _req: Express.Request,
   res: Express.Response,
-  next: Express.NextFunction
+  _next: Express.NextFunction
 ) => {
   let { statusCode, message } = err;
   if (process.env.NODE_ENV === 'production' && !err.isOperational) {
