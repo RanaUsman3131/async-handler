@@ -1,6 +1,6 @@
 import Express from 'express';
-const httpStatus = require('http-status');
-const ApiError = require('./ErrorClass');
+import httpStatus from 'http-status';
+import ApiError from './ErrorClass';
 
 export const errorConverter = (
   err: any,

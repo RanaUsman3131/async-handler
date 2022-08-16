@@ -16,4 +16,4 @@ class ErrorClass extends Error {
   }
 }
 
-module.exports = ErrorClass;
+export default ErrorClass;
