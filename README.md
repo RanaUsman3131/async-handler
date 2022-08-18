@@ -15,7 +15,7 @@ npm install async-handler-express
 ```python
 const { errorHandler }=require('async-handler-express');
 
-#use this middlewares end of routes
+#use this middleware after including routes in the app root/server file.
 app.use(errorHandler);
 
 ```
@@ -26,9 +26,21 @@ app.use(errorHandler);
 const { catchAsync }=require('async-handler-express');
 
 app.get('/',catchAsync(async()=>{
-     await Promise().....
+     await Promise.resolve();
 }));
 
+```
+
+### Example
+
+```python
+#Fetch users data from jsonplaceholder fake apis 
+const { catchAsync }=require('async-handler-express');
+
+router.get('/users',catchAsync(async()=>{
+     const users = await fetch("https://jsonplaceholder.typicode.com/users");
+     return users;
+}));
 
 ```
 
