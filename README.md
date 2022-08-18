@@ -9,20 +9,18 @@ Use the package manager [npm](https://www.npmjs.com/) to install async-handler-e
 ```bash
 npm install async-handler-express
 ```
----
-title: "your title"
-excerpt: "brief description of page contents that show up on previews"
----
+
+## Add Middlewares in root file
 
 ```python
-const { errorHandler }=require('async-handler-express');
+const { errorConverter, errorHandler }=require('async-handler-express');
 
-#use this middleware end of routes
-app.use(errorHandler());
+#use this middlewares end of routes
+app.use(errorConverter);
+app.use(errorHandler);
 
 
 ```
-
 
 ## Usage
 
@@ -37,9 +35,11 @@ app.get('/',catchAsync(async()=>{
 ```
 
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
