@@ -1,6 +1,6 @@
 # Async Handler
 
-This Package is for handled async response Api.
+This Package is to handle the async API response.
 
 ## Installation
 
@@ -10,15 +10,13 @@ Use the package manager [npm](https://www.npmjs.com/) to install async-handler-e
 npm install async-handler-express
 ```
 
-## Add Middlewares in root file
+## Add Middleware in root file
 
 ```python
-const { errorConverter, errorHandler }=require('async-handler-express');
+const { errorHandler }=require('async-handler-express');
 
 #use this middlewares end of routes
-app.use(errorConverter);
 app.use(errorHandler);
-
 
 ```
 
